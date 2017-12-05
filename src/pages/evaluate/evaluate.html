@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Evaluate</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="rateService()" #loginForm="ngForm">
+    <div class="evaluate-item">
+      <h4>Atendimento</h4>
+      <rating [(ngModel)]="rateDate.attendance"
+        readOnly="false"
+        max="5"
+        emptyStarIconName="checkmark-circle-outline"
+        starIconName="checkmark-circle"
+        nullable="false"
+        name="attendance">
+      </rating>
+    </div>
+
+    <div class="evaluate-item">
+      <h4>Preço</h4>
+      <rating [(ngModel)]="rateDate.price"
+        readOnly="false"
+        max="5"
+        emptyStarIconName="checkmark-circle-outline"
+        starIconName="checkmark-circle"
+        nullable="false"
+        name="price">
+      </rating>
+    </div>
+
+    <div class="evaluate-item">
+      <h4>Qualidade do Serviço</h4>
+      <rating [(ngModel)]="rateDate.quality"
+        readOnly="false"
+        max="5"
+        emptyStarIconName="checkmark-circle-outline"
+        starIconName="checkmark-circle"
+        nullable="false"
+        name="quality">
+      </rating>
+    </div>
+
+    <div class="evaluate-button">
+      <button class="pa-button button-blue-dark" type="submit">
+        Avaliar
+      </button>
+    </div>
+  </form>
+</ion-content>
